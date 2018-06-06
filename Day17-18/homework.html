@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">    
+    <title>IFE ECMAScript</title>
+    <style type="text/css">
+    	td {
+    		border: 1px solid black;
+    	}
+    </style>
+</head>
+<body>    
+	<h1>Day 17 - 18</h1>  
+	<h2>Problem 1</h2>  
+    <input id="dec-number" type="number" placeholder="输入一个十进制非负整数">
+    <input id="bin-bit" type="number" placeholder="输入转化后二进制数字位数">
+    <button id="trans-btn">转化为二进制</button>
+    <p id="result">运算结果</p>
+
+    <h2>Problem 2</h2>
+    <table id="product-table">
+    	
+    </table>
+    <script>
+
+		function dec2bin(decNumber) {
+		    // 在这里实现你的转化方法，注意需要判断输入必须为一个非负整数
+		    var number = parseInt(decNumber);
+		    console.log(number);
+		    var bin = [];
+		    var res = number;
+		    var remain = 0;
+		    do {
+		    	remain = res % 2;
+		    	//console.log(remain);
+		    	res = Math.floor(res / 2);
+		    	//console.log(res);
+		    	bin.unshift(remain);
+		    } while(res != 0);
+		    return bin.join("");
+		}
+
+		// 实现党点击转化按钮时，将输入的十进制数字转化为二进制，并显示在result的p标签内
+		var input = document.querySelector("#dec-number");
+		var btn = document.querySelector("#trans-btn");
+		var binBit = document.querySelector("#bin-bit");
+		var output = document.querySelector("#result");
+		btn.onclick = function() {
+			var result = dec2bin(parseInt(input.value));
+			if(result.length >= parseInt(binBit.value)) {
+				output.innerText = result;
+			} else {
+				output.innerText = input.value;
+			}
+		}
+
+		// Problem 2
+		function productTableGen() {
+			document.write("<table>");
+			for(var i = 1; i <= 9; i++) {
+				document.write("<tr>");
+				for(var j = 1; j <= i; j++) {
+					document.write("<td>" + i*j + "</td>");
+				}
+				document.write("</tr>");
+			}
+		}
+
+		productTableGen();
+    </script>
+</body>
+</html>

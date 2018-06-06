@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Event Delegation</title>
+	<style type="text/css">
+		li:hover {
+			font-size: 30px;
+		}
+	</style>
+</head>
+<body>
+<h1>Event Delegation</h1>
+Here we have a ordered list:
+<ol id="ordered-list"></ol>
+<p id="output"></p>
+<script type="text/javascript">
+	var list = document.getElementById("ordered-list");
+	var output = document.getElementById("output");
+	for(var i = 1; i <= 10; i++) {
+		var item = document.createElement("LI");
+		item.innerText = "This is the " + i + " item";
+		list.appendChild(item); 
+	}
+
+	list.addEventListener("click", function(e){
+		if(e.target && e.target.matches("li")){
+			output.innerText = e.target.innerText;
+		}
+	});
+</script>
+</body>
+</html>
