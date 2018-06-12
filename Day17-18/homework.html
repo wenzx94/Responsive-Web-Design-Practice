@@ -5,7 +5,7 @@
     <title>IFE ECMAScript</title>
     <style type="text/css">
     	td {
-    		border: 1px solid black;
+    		padding: 5px 10px;
     	}
     </style>
 </head>
@@ -60,7 +60,7 @@
 			for(var i = 1; i <= 9; i++) {
 				document.write("<tr>");
 				for(var j = 1; j <= i; j++) {
-					document.write("<td>" + i*j + "</td>");
+					document.write("<td>" + j + "*" + i + "=" + +i*j + "</td>");
 				}
 				document.write("</tr>");
 			}

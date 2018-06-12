@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Floating Clearance</title>
+	<style type="text/css">
+		div.wrap {
+			border: 1px black solid;
+			background-color: #f7d9c5;
+			padding: 10px;
+			margin: 20px;
+		}
+		div.main.left {
+			width: 300px;
+			height: 100px;
+			background-color: #f48942;
+			float: left;
+		}
+		div.side.left {
+			width: 200px;
+			height: 80px;
+			background-color: #237cdb;
+			float: left;
+		}
+		div.footer {
+			height: 80px;
+			background-color: #aac685;
+			clear: both;
+			margin-top: 20px;
+		}
+	</style>
+</head>
+<body>
+<h1>Floatign Clearance</h1>
+<h2>Problem: 由于浮动引起的高度塌陷</h2>
+<div class="wrap" id="float1">
+	<div class="main left"></div>
+	<div class="side left"></div>
+</div>
+<div class="footer"></div>
+
+<h2>清除浮动</h2>
+<h3>1. 在浮动元素结尾加clearfix div</h3>
+<div class="wrap" id="float1">
+	<div class="main left"></div>
+	<div class="side left"></div>
+	<div style="clear:both"></div>
+</div>
+<div class="footer"></div>
+<h3>2. </h3>
+<div class="wrap" id="float1" style="overflow: hidden;">
+	<div class="main left"></div>
+	<div class="side left"></div>
+</div>
+<div class="footer"></div>
+</body>
+</html>
